@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name": "Google-Keyboard-nav",
+  "version": "1.0",
+
+  "description": "Adds keyboard-navigation to google-search-results",
+
+  "icons": {
+    "48": "icons/keyboard-navigation-48.png",
+    "96": "icons/keyboard-navigation-96.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.de/search?*"],
+      "js": ["keyboard-navigation.js"]
+    }
+  ]
+
+}
