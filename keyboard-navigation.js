@@ -2,39 +2,37 @@ let altPressed = false;
 let results = [];
 let currentResult = 0;
 window.addEventListener('load', initResults, false);
-window.addEventListener('keydown', toggleAlt, false);
-window.addEventListener('keyup', toggleAlt, false);
+window.addEventListener('keydown', handleAltKey, false);
+window.addEventListener('keyup', handleAltKey, false);
 
 function initResults() {
   results = document.querySelectorAll('#lst-ib, #search :not(#extrares) h3 a, #nav a');
   currentResult = 0;
-  window.addEventListener('keydown', logArrow, false);
-  document.querySelector('#lst-ib').addEventListener('keydown', logArrow, false);
+  window.addEventListener('keydown', handleNavigation, false);
+  document.querySelector('#lst-ib').addEventListener('keydown', handleNavigation, false);
 }
 
-function toggleAlt(e){
+function handleAltKey(e){
   if (e.key === 'Alt') {
     altPressed = e.type === 'keydown'
   }
 }
 
-function logArrow(e) {
+function handleNavigation(e) {
   if (altPressed) {
     e.stopPropagation();
     if (e.key === 'ArrowDown') {
-      if (currentResult < results.length - 1) {
-        currentResult++;
-      }
-      focusCurrentResult();
+      focusResult(1);
     } else  if (e.key === 'ArrowUp') {
-      if (currentResult > 0) {
-        currentResult--;
-      }
-      focusCurrentResult();
+      focusResult(-1);
     }
   }
 }
 
-function focusCurrentResult() {
+function focusResult(direction) {
+  const futureResult = currentResult + direction;
+  if (futureResult < results.length - 1 && futureResult > 0) {
+    currentResult = futureResult;
+  }
   results[currentResult].focus();
 }
