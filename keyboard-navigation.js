@@ -15,7 +15,6 @@ function initResults() {
 function toggleAlt(e){
   if (e.key === 'Alt') {
     altPressed = e.type === 'keydown'
-    console.log('altPressed', altPressed)
   }
 }
 
