@@ -31,7 +31,7 @@ function handleNavigation(e) {
 
 function focusResult(direction) {
   const futureResult = currentResult + direction;
-  if (futureResult < results.length - 1 && futureResult > 0) {
+  if (futureResult < results.length - 1 && futureResult >= 0) {
     currentResult = futureResult;
   }
   results[currentResult].focus();
