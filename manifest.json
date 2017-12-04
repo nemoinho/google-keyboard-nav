@@ -14,7 +14,8 @@
   "content_scripts": [
     {
       "matches": ["*://*.google.de/search?*"],
-      "js": ["keyboard-navigation.js"]
+      "js": ["keyboard-navigation.js"],
+      "run_at": "document_idle"
     }
   ]
 

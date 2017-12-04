@@ -1,18 +1,20 @@
 let altPressed = false;
 let results = [];
 let currentResult = 0;
-window.addEventListener('load', initResults, false);
-window.addEventListener('keydown', handleAltKey, false);
-window.addEventListener('keyup', handleAltKey, false);
+addEventListener('keydown', handleAltKey, false);
+addEventListener('keyup', handleAltKey, false);
+addEventListener('keydown', handleNavigation, false);
+initResults();
 
 function initResults() {
+  console.log("fbhe");
   results = document.querySelectorAll('#lst-ib, #search :not(#extrares) h3 a, #nav a');
   currentResult = 0;
-  window.addEventListener('keydown', handleNavigation, false);
   document.querySelector('#lst-ib').addEventListener('keydown', handleNavigation, false);
 }
 
 function handleAltKey(e){
+  console.log(e.key);
   if (e.key === 'Alt') {
     altPressed = e.type === 'keydown'
   }
