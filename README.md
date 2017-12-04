@@ -7,7 +7,7 @@ As long as this extension has not released you only can install it via developme
 For that you have to checkout the project or download the zip and follow the browser-specific instructions.
 
 ### Firefox
-Go to [about:debugging#addons](about:debugging#addons) and check "Enable add-on debugging" than load the manifest.json of the project via "Load Temporary Add-on"
+Go to `about:debugging#addons` and check "Enable add-on debugging" than load the manifest.json of the project via "Load Temporary Add-on"
 
 ### Chrome
-Go to [chrome://extensions](chrome://extensions) and check "Development mode" than open the project-directory via "Load unpacked extension…"
+Go to `chrome://extensions` and check "Development mode" than open the project-directory via "Load unpacked extension…"
